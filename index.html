@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SignHand</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <script src="js/jquery.mobile-1.4.5.min.css"></script> -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/moment.js"></script>
+    <!-- <script src="js/jquery.mobile-1.4.5.min.js"></script> -->
+    <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/hover.css">
+    <link rel="stylesheet" type="text/css" href="css/awesome-bootstrap-checkbox.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="css/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datetimepicker.js"></script>
+
+  </head>
+  <body>
+     
+    <div class="parent">
+      <div id="sign-up-container">
+        <div class="container custom-container">
+          <div class="row">
+            <div class="col-md-12">
+                <div class='custom-center img-fluid'>
+                  <img src="images/signhand-logo.jpg">
+                  <h2>Sign up to <strong>never</strong> worry about <br>your open house signs <strong>again</strong>.</h2>
+                </div>
+                <br>
+                <form class="form-horizontal" method="post">
+                    <fieldset>
+                        <div class="form-group">
+                            <div class="col-xs-4 col-s-2 col-md-2 col-xs-offset-2 col-s-offset-4 col-md-offset-4">
+                                <input id="fname" name="name" type="text" placeholder="First Name" class="form-control">
+                            </div>
+                            <div class="col-xs-4 col-s-2 col-md-2">
+                                <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">                  
+                            <div class="col-xs-8 col-s-4 col-md-4 col-xs-offset-2 col-s-offset-4 col-md-offset-4">
+                                <input id="email" name="email" type="text" placeholder="name@example.com" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-4 col-s-2 col-md-2 col-xs-offset-2 col-s-offset-4 col-md-offset-4">
+                                <input id="phone" name="phone" type="text" placeholder="City of business" class="form-control">
+                            </div>
+                            <div class="col-xs-4 col-s-2 col-md-2">
+                                <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <div class="col-md-12 text-center sign-up-button">
+                                <button type="submit" class="custom-btn-primary">Submit</button>
+                            </div>
+                        </div>
+                        <div class="form-group text-center">
+                          <a id='login-page' onclick="navigate('#' + this.id)">Already have an account? Log in here!</a>
+                        </div>
+                    </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <div id="login-container">
+        <div class="container custom-container">
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-4 col-xs-offset-3 col-s-offset-4 col-md-offset-4">
+                <div class='custom-center img-fluid'>
+                  <img src="images/large_logo.png">
+                  <h2>Login</h2>
+                </div>
+                <br>
+                <form action="" id="loginForm">
+                  <div class="form-group input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                    <input class="form-control" type="text" name='username' placeholder="username"/>          
+                  </div>
+                  <div class="form-group input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input class="form-control" type="password" name='password' placeholder="password"/>     
+                  </div>
+                  <div class="form-group col-md-12 text-center login-button">
+                    <button id="listing" type="button" class="custom-btn-primary" onclick="navigate('#' + this.id)">Login</button>
+                  </div>
+                  <div class="form-group text-center">
+                    <a>Forgot Password</a>&nbsp;|&nbsp;<a id='back' onclick="navigate('#' + this.id)">Back to Sign up</a>
+                  </div>
+                </form>     
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <div id="nav-container">
+        <nav id="navbar2" class="navbar navbar-default navbar-fixed-top" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#"><span><img id="logo" src="images/signhand-logo.jpg"></span></a>
+              <div id="my-listings" class="navbar-center"><h2>My Listings</h2></div>
+              <div id="my-account" class="navbar-center"><h2>My Account</h2></div>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+              <ul class="nav navbar-nav">
+                <li><a id="listing-page" onclick="navigate('#' + this.id)">Listings</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a id="personal-page" onclick="navigate('#' + this.id)">Personal Info</a></li>
+                <li><a href="#">Sign Out</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div id="listing-container">
+        <div id="parent-container" class="swing">
+          <div class="show">
+            <div id="order" class="text-center">
+              <button id="back-btn" type="button" class="back-arrow custom-btn btn btn-secondary pull-left"><span class="fa fa-arrow-left"></span></button>
+              Order Summary
+              <button id="edit-btn" type="button" class="edit custom-btn btn btn-secondary pull-right">Edit</button>
+            </div>
+            <div id="address" class="click-div">
+              1752 Manzanita Drive, Oakland
+              <span id="test" class="fa fa-arrow-right pull-right"></span>
+            </div>
+            <div id="form-container" class="hide-this">
+              <hr>
+              <form class="form-horizontal" method="post">
+                <div class="form-group">
+                    <div class="col-xs-12 col-s-2 col-md-12 col-md-pull-4 col-s-offset-4 col-md-offset-4">
+                      <p>Sign Pick Up Location</p>
+                      <input name="pickup-location" type="text" placeholder="Enter the pick-up destination" id="pickup-location" class="form-control pickup-value check-this">
+                    </div>  
+                </div>                
+                <p>Pick Up Instructions</p>
+                <textarea id="instructions" name="instructions" class="form-control pick-up-instructions" type="text" rows="3" placeholder="Example: I will leave the signs on the side of my house next to the planter box"></textarea>
+                <hr> 
+                <div class="form-group">
+                    <div class="col-xs-12 col-s-2 col-md-12 col-md-pull-4 col-s-offset-4 col-md-offset-4">
+                      <p>Listing Address</p>
+                      <input name="address" type="text" placeholder="Enter a new address" id="listing-input" class="form-control listing-value check-this" >
+                    </div>  
+                </div>
+                <div class="list-container">
+                  <img style="width: 620px;" src="images/Map.png">
+                </div>
+                <div class="list-container">
+                  <span><img src="images/alternitive_pin.png"> Sign Locations</span>
+                  <p class="sign-locations">Drop a pin or type the cross streets below.</p>
+                </div>
+                <div class="form-group">                  
+                  <div class="col-xs-8 col-s-4 col-md-7 col-md-pull-4 col-s-offset-4 col-md-offset-4 drop-input">
+                    <div class="input-group">
+                      <input id="enter-location" name="text" type="text" placeholder="Enter your locations" class="form-control check-pins">
+                      <span class="input-group-btn">
+                        <button id="add-pin" type="button" class="custom-btn custom-btn-color btn btn-secondary add-pin-location">+ Add Pin</button>
+                      </span>
+                    </div>
+                    <ol id="locations-list" class="locations locations-value">
+
+                    </ol>
+                  </div>
+                </div>
+                <hr>
+                <p>Would you rather have us choose your sign locations??</p>
+                <div class="checkbox checkbox-info checkbox-circle">
+                  <input id="checkboxz" class="custom-placement" type="checkbox" name="signplacement"> 
+                  <label for="checkboxz">
+                    Yes, choose the locations for me. (Extra fee)
+                  </label>
+                </div>
+                <p id="text-number" class="text-sign"><br>Specify the number of signs</p>
+                <div id="input-signs" class="form-group number-signs">
+                  <div class="col-xs-3 col-s-3 col-md-3 col-md-pull-4 col-s-offset-4 col-md-offset-4">
+                    <div class='input-group'>
+                      <input type='number' min="1" id="signs" name="sign" class="form-control number-value" />
+                      <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-hand-left"></span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <p>Open House Date</p>
+                <div class="form-group">
+                  <div class="col-xs-8 col-s-4 col-md-4 col-md-pull-4 col-s-offset-4 col-md-offset-4">
+                    <div class='input-group date' id='datepicker'>
+                        <input type='text' id="date" name="date" class="form-control date-value check-this" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                  </div>
+                </div>
+                <p>Open House Time</p>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-xs-4 col-s-4 col-md-4 col-md-offset-1">
+                      <div class='input-group start' id='starttime'>
+                          <input type='text' id="starttime-input" name="starttime" class="form-control starttime-value check-this" />
+                          <span class="input-group-addon">
+                              <span class="glyphicon glyphicon-time"></span>
+                          </span>
+                      </div>
+
+                    </div>
+                    <div class="col-xs-1 col-s-1 col-md-1">
+                      <p>to</p>
+                    </div>
+                    <div class="col-xs-4 col-s-4 col-md-4">
+                      <div class='input-group end' id='endtime'>
+                          <input type='text' id="endtime-input" name="endtime" class="form-control endtime-value check-this" />
+                          <span class="input-group-addon">
+                              <span class="glyphicon glyphicon-time"></span>
+                          </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>            
+                <hr>
+                <p>Special Instructions</p>
+                <textarea id="special-instructions" class="form-control special-value" rows="3" placeholder="Example: Please make sure you place one sign at the top of the driveway and another directly in front of the house"></textarea>
+                <br>
+                <div class="form-group">
+                  <div class="col-md-12 text-center">
+                    <div class="alert alert-danger fade in">                      
+                      <strong>Warning!</strong> Please make sure to fill out the form completely.
+                    </div>
+                    <button type="button" class="custom-btn-primary review-submit">Review and Submit</button>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <p class="step1">Step 1 of 2</p>
+                </div>
+              </form>
+            </div>
+            <div id="summary-container" class="hide-this">
+              <hr>
+              <p>Sign Pick Up Location and Instructions</p>
+              <ul id="location-instructions" class="placing pickup-and-instr">
+                
+              </ul>
+              <hr>
+              <p>Listing Address</p>
+              <ul id="order-address" class="listing-address">
+                
+              </ul>
+              <hr>
+              <p>Sign Locations</p>
+              <ol id="sign-locations" class="locations order-locations">
+
+              </ol>
+              <hr>
+              <p>Would you like us to place your signs for you?</p>
+              <ul id="custom-placement" class="placing paid-placement">
+                
+              </ul>
+              <hr>
+              <p>Open House Date and Time</p>
+              <ul id="date-and-time" class="placing order-datetime">
+                
+              </ul>
+              <hr>
+              <p>Special Instructions?</p>
+              <div id="special" class="order-specialInstr">
+              
+              </div>
+              <hr>
+              <div class="form-group">
+                <div class="col-md-12 text-center">
+                  <button type="submit" class="custom-btn-primary">Submit Order</button>
+                </div>
+              </div>
+              <br>
+              <div class="text-center">
+                <p class="step2">Step 2 of 2</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button id="add-to-list" class="btn btn-lg" onclick="addList('#' + this.id)">+ Add Listing</button>
+      </div>
+      <div id="personal-container">
+        <div id="personal-info">   
+          <div class="text-center">
+            Personal Info
+          </div>
+          <hr>
+          <form action="" id="loginForm">
+            <div class="form-group input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+              <input class="form-control" type="email" name='email' placeholder="Change Email"/>          
+            </div>
+            <div class="form-group input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input class="form-control" type="password" name='password' placeholder="Change Password"/>     
+            </div>
+            <div class="form-group input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input class="form-control" type="name" name='first-name' placeholder="First name"/>     
+            </div>
+            <div class="form-group input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input class="form-control" type="name" name='last-name' placeholder="Last name"/>     
+            </div>
+            <div class="form-group input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
+              <input class="form-control" type="phone" name='phone' placeholder="Phone number"/>     
+            </div>
+            <hr>
+            <div class="form-group col-md-12 text-center login-button">
+              <button type="button" class="custom-btn-primary">Save Settings</button>
+            </div>
+            <br>
+          </form>  
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/front-end.js"></script>
+  </body>
+</html>
